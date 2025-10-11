@@ -11,16 +11,15 @@ public class RegistrationLoginTest {
     
     @BeforeClass
     public void setUp() {
-        // This runs once before any tests
         Registration.clearRegisteredUsers();
     }
     
     @BeforeMethod
     public void beforeTest() {
-        // This runs before each test method
         Registration.clearRegisteredUsers();
     }
     
+    //existing tests
     @Test
     public void testCheckUserName_CorrectlyFormatted() {
         assertTrue(Registration.checkUserName("kyl_1"));
@@ -51,7 +50,6 @@ public class RegistrationLoginTest {
     
     @Test
     public void testCheckCellPhoneNumber_ValidSouthAfricanNumbers() {
-        // Valid South African numbers
         assertTrue(Registration.checkCellPhoneNumber("+27821234567"));
         assertTrue(Registration.checkCellPhoneNumber("+27761234567"));
         assertTrue(Registration.checkCellPhoneNumber("+27651234567"));
@@ -60,7 +58,6 @@ public class RegistrationLoginTest {
     
     @Test
     public void testCheckCellPhoneNumber_InvalidSouthAfricanNumbers() {
-        // Invalid South African numbers
         assertFalse(Registration.checkCellPhoneNumber("08966533"));
         assertFalse(Registration.checkCellPhoneNumber("0821234567"));
         assertFalse(Registration.checkCellPhoneNumber("+271234567"));
@@ -132,24 +129,8 @@ public class RegistrationLoginTest {
         assertEquals(status, "Login failed. Please check your username and password.");
     }
     
-    @Test
-    public void testSouthAfricanCellPhoneRegexPattern() {
-        // Valid South African patterns
-        assertTrue("+27821234567".matches("^\\+27[1-9]\\d{8}$"));
-        assertTrue("+27761234567".matches("^\\+27[1-9]\\d{8}$"));
-        assertTrue("+27651234567".matches("^\\+27[1-9]\\d{8}$"));
-        
-        // Invalid patterns
-        assertFalse("0821234567".matches("^\\+27[1-9]\\d{8}$"));
-        assertFalse("+27012345678".matches("^\\+27[1-9]\\d{8}$"));
-        assertFalse("+2782123456".matches("^\\+27[1-9]\\d{8}$"));
-        assertFalse("+278212345678".matches("^\\+27[1-9]\\d{8}$"));
-        assertFalse("+447912345678".matches("^\\+27[1-9]\\d{8}$"));
-    }
-    
     @AfterClass
     public void tearDown() {
-        // Clean up after all tests
         Registration.clearRegisteredUsers();
     }
 }

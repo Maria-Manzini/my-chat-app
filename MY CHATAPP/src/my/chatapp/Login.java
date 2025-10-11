@@ -28,6 +28,8 @@ public class Login {
     }
     
     // Method to show login dialogue
+    // NOTE: This method is now primarily used for direct login calls
+    // The main app uses performLogin() which calls loginUser() and returnLoginStatus()
     public static void showLoginDialogue() {
         JOptionPane.showMessageDialog(null, 
             "=== User Login ===\n" +
@@ -46,7 +48,8 @@ public class Login {
         
         JOptionPane.showMessageDialog(null, status, "Login Result", 
             loginSuccess ? JOptionPane.INFORMATION_MESSAGE : JOptionPane.ERROR_MESSAGE);
+        
+        // NEW: If login successful, the main app will detect this through the return values
+        // The main app now handles the transition to the chat features
     }
-
-
 }
