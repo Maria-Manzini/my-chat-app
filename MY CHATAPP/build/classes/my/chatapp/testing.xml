@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ChatApp Test Suite" verbose="1">
+    <test name="All ChatApp Tests">
+        <classes>
+            <class name="my.chatapp.RegistrationLoginTest"/>
+            <class name="my.chatapp.MessageTest"/>
+        </classes>
+    </test>
+</suite>

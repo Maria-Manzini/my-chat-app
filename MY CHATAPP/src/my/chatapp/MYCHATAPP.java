@@ -66,10 +66,9 @@ public class MYCHATAPP {
                         sendMessagesFeature();
                         break;
                     case 1: // Option 2: Show Recently Sent Messages
-                        // UPDATED: Now shows actual sent messages instead of "Coming Soon"
-                        String sentMessages = messageService.printMessages();
-                        JOptionPane.showMessageDialog(null, sentMessages, "Recently Sent Messages", JOptionPane.INFORMATION_MESSAGE);
-                        break;
+    // REQUIREMENT: This feature is still in development - display "Coming Soon"
+    JOptionPane.showMessageDialog(null, "Coming Soon....", "Feature in Development", JOptionPane.INFORMATION_MESSAGE);
+    break;
                     case 2: // Option 3: Quit
                         isLoggedIn = false;
                         currentUser = "";
