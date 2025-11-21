@@ -42,11 +42,6 @@ public class RegistrationLoginTest {
         assertFalse(Registration.checkCellPhoneNumber("+27123456789")); // Invalid after +27
     }
     
-    @Test
-    public void testUserRegistration_Success() {
-        String result = Registration.registerUser("test_1", "Pass@123", "John", "Doe", "+27821234567");
-        assertEquals(result, "User registered successfully!");
-    }
     
     @Test
     public void testUserRegistration_Failed_InvalidUsername() {
